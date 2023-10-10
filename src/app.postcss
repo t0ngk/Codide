@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gutter {
+  @apply bg-[#080404];
+  @apply z-50
+}
+
+.gutter.gutter-horizontal {
+  @apply border-l border-r border-[#393939] cursor-col-resize;
+}
+
+.gutter.gutter-vertical {
+  @apply border-t border-b border-[#393939] cursor-row-resize;
+}
