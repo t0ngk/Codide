@@ -14,6 +14,7 @@
 
 <svelte:head>
 	<script src="https://unpkg.com/emmet-monaco-es/dist/emmet-monaco.min.js"></script>
+	<title>Codide</title>
 </svelte:head>
 
 <div class="w-full h-[100dvh] flex flex-col bg-[#080404]">
