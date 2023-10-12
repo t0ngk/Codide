@@ -15,6 +15,7 @@
 		"@iconify/svelte": "^3.1.4",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
+		"@types/prismjs": "^1.26.1",
 		"autoprefixer": "^10.4.14",
 		"monaco-editor": "^0.44.0",
 		"postcss": "^8.4.24",
@@ -30,6 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"prismjs": "^1.29.0",
 		"split.js": "^1.6.5"
 	}
 }

@@ -15,3 +15,15 @@
 .gutter.gutter-vertical {
   @apply border-t border-b border-[#393939] cursor-row-resize;
 }
+
+* {
+  touch-action: manipulation;
+}
+
+body {
+-webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+overscroll-behavior-y: none;
+}
