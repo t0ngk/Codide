@@ -3,16 +3,22 @@
 	import Editor from '$lib/components/Editor.svelte';
 	import SplitPanel from '$lib/components/SplitPanel.svelte';
 	import Icon from '@iconify/svelte';
-	import * as Prism from 'prismjs';
+	import type { PageData } from './$types';
+	import { cssCode, htmlCode, jsCode } from '$lib/components/store/editor';
+    
+	export let data: PageData;
+	const {project} = data;
+	export let rawHTML: string = project?.html || '';
+	export let rawCSS: string = project?.css || '';
+	export let rawJS: string = project?.js || '';
 
-	let rawHTML: string = '';
-	let rawCSS: string = '';
-	let rawJS: string = '';
+	$: htmlCode.set(rawHTML);
+	$: cssCode.set(rawCSS);
+	$: jsCode.set(rawJS);
 
 	let injectJS: string = '';
 	let delay = setTimeout(() => {}, 0);
 	let tying: boolean = false;
-
 	$: if (rawJS !== injectJS) {
 		clearTimeout(delay);
 		tying = true;
