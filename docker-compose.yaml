@@ -1,12 +1,12 @@
 version: '3.7'
 services:
   web:
-    build: .
+    build: ./docker/codide
     ports:
       - "3000:3000"
     environment:
       - DATABASE_URL=mongodb://root:password@mongo:27018/codide?authSource=admin&directConnection=true
-      - SECERT_KEY=codide-10-17-2023-secret-key
+      - SECERT_KEY=ENTER_YOUR_SECRET_KEY
     depends_on:
       - mongo
     networks:
