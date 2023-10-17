@@ -2,8 +2,8 @@ import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import User from '$lib/validators/User';
 import prisma from '$lib/prisma';
-import bcrypt from 'bcrypt';
-import * as jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import { SECERT_KEY } from '$env/static/private'
 
 export const POST: RequestHandler = async ({ request, cookies }) => {

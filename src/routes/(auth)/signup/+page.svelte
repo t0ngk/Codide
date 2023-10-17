@@ -1,11 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { slide } from 'svelte/transition';
-	import type { PageData } from './$types';
 	import { z } from 'zod';
 	import Icon from '@iconify/svelte';
-
-	export let data: PageData;
 
 	const schema = z.object({
 		username: z.string().min(4).max(20),

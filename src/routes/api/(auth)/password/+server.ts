@@ -2,7 +2,7 @@ import { authenticateUser } from '$lib/server/auth';
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import prisma from '$lib/prisma';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 
 export const POST: RequestHandler = async (event) => {
 	const user = await authenticateUser(event);

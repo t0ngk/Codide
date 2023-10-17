@@ -2,10 +2,8 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { z } from 'zod';
-	import type { PageData } from './$types';
 	import { slide } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-	export let data: PageData;
 
 	let errorForm: any = null;
 	let isLogin: boolean = false;

@@ -2,7 +2,7 @@ import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import User from '$lib/validators/User';
 import prisma from '$lib/prisma';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export const POST: RequestHandler = async ({ request }) => {
 	const { username, password, confirmPassword } = await request.json();

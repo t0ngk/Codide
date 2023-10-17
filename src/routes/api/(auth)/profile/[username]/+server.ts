@@ -1,6 +1,6 @@
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import prisma from '$lib/prisma';
 import { SECERT_KEY } from '$env/static/private';
 
