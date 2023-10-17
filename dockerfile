@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN npm install -g pnpm && pnpm install
 COPY . .
-RUN pnpm run build
+RUN pnpx prisma generate && pnpm run build
 
 FROM node:18.16-alpine AS production
 WORKDIR /app
@@ -12,7 +12,6 @@ RUN npm install -g pnpm && pnpm install --production
 COPY --from=build ./app/build .
 COPY --from=build ./app/node_modules ./node_modules
 COPY --from=build ./app/prisma ./prisma
-RUN pnpx prisma generate
 
 EXPOSE 3000:3000
 CMD [ "npm", "run", "start" ]
