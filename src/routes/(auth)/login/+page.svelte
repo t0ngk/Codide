@@ -38,7 +38,10 @@
 			const redirctTo = $page.url.searchParams.get('redirect');
 			window.location.href = redirctTo || '/code/new';
 		} else {
-			console.log(await res.json());
+			const { message } = await res.json();
+			errorForm = {
+				password: message
+			}
 		}
 		isLogin = false;
 	};
